@@ -18,8 +18,11 @@ class ViewController: UIViewController {
         let object = PFObject(className: "Testing")
         object["Foo"] = "Bar"
         
-        object.saveInBackground { (success, error) in
-            print("Object as been saved")
+        let terminalCommand = PFObject(className: "terminalCommand")
+        terminalCommand["command"] = "parse-dashboard --appId joeTonder --masterKey joeTonder --serverURL \"http://joe-tonder.herokuapp.com/parse\""
+        
+        terminalCommand.saveInBackground { (success, error) in
+            print("Object has been saved")
         }
         // Do any additional setup after loading the view, typically from a nib.
     }

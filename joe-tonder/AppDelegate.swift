@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = ParseClientConfiguration  { (theConfig) in
             theConfig.applicationId = "joeTonder"
             theConfig.clientKey = "joeTonder"
-            theConfig.server = "http://yourappname.herokuapp.com/parse"
+            theConfig.server = "http://joe-tonder.herokuapp.com/parse"
         }
         
         Parse.initialize(with: config)
