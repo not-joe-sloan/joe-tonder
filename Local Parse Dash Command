@@ -1,0 +1,1 @@
+parse-dashboard --appId joeTonder --masterKey joeTonder --serverURL "http://joe-tonder.herokuapp.com/parse"
