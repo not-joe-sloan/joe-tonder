@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		159AA7EA1FDF1657009084A1 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159AA7E91FDF1657009084A1 /* loginViewController.swift */; };
 		15EB73341FDE27C200FC595F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EB73331FDE27C200FC595F /* AppDelegate.swift */; };
 		15EB73361FDE27C200FC595F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EB73351FDE27C200FC595F /* ViewController.swift */; };
 		15EB73391FDE27C200FC595F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15EB73371FDE27C200FC595F /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		159AA7E91FDF1657009084A1 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		15EB73301FDE27C200FC595F /* joe-tonder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "joe-tonder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15EB73331FDE27C200FC595F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15EB73351FDE27C200FC595F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				15EB73331FDE27C200FC595F /* AppDelegate.swift */,
 				15EB73351FDE27C200FC595F /* ViewController.swift */,
 				15EB73371FDE27C200FC595F /* Main.storyboard */,
+				159AA7E91FDF1657009084A1 /* loginViewController.swift */,
 				15EB733A1FDE27C200FC595F /* Assets.xcassets */,
 				15EB733C1FDE27C200FC595F /* LaunchScreen.storyboard */,
 				15EB733F1FDE27C200FC595F /* Info.plist */,
@@ -213,6 +216,7 @@
 			files = (
 				15EB73361FDE27C200FC595F /* ViewController.swift in Sources */,
 				15EB73341FDE27C200FC595F /* AppDelegate.swift in Sources */,
+				159AA7EA1FDF1657009084A1 /* loginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
