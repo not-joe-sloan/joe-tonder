@@ -70,19 +70,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PVy-Sl-gKh">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PVy-Sl-gKh">
                                 <rect key="frame" x="50" y="197" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-wd-8Zd">
+                                <rect key="frame" x="50" y="246" width="275" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="0.42509781111641742" blue="0.3900925901295802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aTt-0e-jkP" firstAttribute="trailing" secondItem="c6q-QZ-P4J" secondAttribute="trailing" constant="50" id="2xu-Ta-xwI"/>
+                            <constraint firstItem="aTt-0e-jkP" firstAttribute="trailing" secondItem="Tkh-wd-8Zd" secondAttribute="trailing" constant="50" id="6E5-R5-GsS"/>
                             <constraint firstItem="TMc-la-cQv" firstAttribute="top" secondItem="aTt-0e-jkP" secondAttribute="top" constant="22" id="Cma-RI-hiN"/>
                             <constraint firstItem="TMc-la-cQv" firstAttribute="leading" secondItem="aTt-0e-jkP" secondAttribute="leading" constant="50" id="Khr-Wn-0em"/>
+                            <constraint firstItem="Tkh-wd-8Zd" firstAttribute="top" secondItem="PVy-Sl-gKh" secondAttribute="bottom" constant="19" id="O55-U5-bDU"/>
                             <constraint firstItem="OYK-R7-SQ4" firstAttribute="top" secondItem="c6q-QZ-P4J" secondAttribute="bottom" constant="39" id="Q0I-yE-Rd1"/>
+                            <constraint firstItem="Tkh-wd-8Zd" firstAttribute="leading" secondItem="aTt-0e-jkP" secondAttribute="leading" constant="50" id="QnM-5F-9PU"/>
                             <constraint firstItem="c6q-QZ-P4J" firstAttribute="top" secondItem="TMc-la-cQv" secondAttribute="bottom" constant="14" id="RyY-SM-gDH"/>
                             <constraint firstItem="aTt-0e-jkP" firstAttribute="trailing" secondItem="TMc-la-cQv" secondAttribute="trailing" constant="50" id="YnT-kd-ofh"/>
                             <constraint firstItem="PVy-Sl-gKh" firstAttribute="leading" secondItem="aTt-0e-jkP" secondAttribute="leading" constant="50" id="bUz-6I-jzC"/>
