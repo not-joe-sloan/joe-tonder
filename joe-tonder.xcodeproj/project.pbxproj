@@ -12,6 +12,7 @@
 		15EB73391FDE27C200FC595F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15EB73371FDE27C200FC595F /* Main.storyboard */; };
 		15EB733B1FDE27C200FC595F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15EB733A1FDE27C200FC595F /* Assets.xcassets */; };
 		15EB733E1FDE27C200FC595F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15EB733C1FDE27C200FC595F /* LaunchScreen.storyboard */; };
+		674AA1F9CC0C3FD9F43611F5 /* Pods_joe_tonder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B5F837610D7F37D7173637 /* Pods_joe_tonder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		15EB733A1FDE27C200FC595F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15EB733D1FDE27C200FC595F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15EB733F1FDE27C200FC595F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE7D439D234112B42C97C803 /* Pods-joe-tonder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-joe-tonder.release.xcconfig"; path = "Pods/Target Support Files/Pods-joe-tonder/Pods-joe-tonder.release.xcconfig"; sourceTree = "<group>"; };
+		E3B5F837610D7F37D7173637 /* Pods_joe_tonder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_joe_tonder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6925ACD218E7139BFB10678 /* Pods-joe-tonder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-joe-tonder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-joe-tonder/Pods-joe-tonder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				674AA1F9CC0C3FD9F43611F5 /* Pods_joe_tonder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				15EB73321FDE27C200FC595F /* joe-tonder */,
 				15EB73311FDE27C200FC595F /* Products */,
+				6E5A46F3D2AACC2078054112 /* Pods */,
+				E7C211228B1F4DECD348AB4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = "joe-tonder";
 			sourceTree = "<group>";
 		};
+		6E5A46F3D2AACC2078054112 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6925ACD218E7139BFB10678 /* Pods-joe-tonder.debug.xcconfig */,
+				DE7D439D234112B42C97C803 /* Pods-joe-tonder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E7C211228B1F4DECD348AB4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3B5F837610D7F37D7173637 /* Pods_joe_tonder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15EB73421FDE27C200FC595F /* Build configuration list for PBXNativeTarget "joe-tonder" */;
 			buildPhases = (
+				EDDF37A4413A481AB06C2B1A /* [CP] Check Pods Manifest.lock */,
 				15EB732C1FDE27C200FC595F /* Sources */,
 				15EB732D1FDE27C200FC595F /* Frameworks */,
 				15EB732E1FDE27C200FC595F /* Resources */,
+				0CD24AA91AF3F0373595FA90 /* [CP] Embed Pods Frameworks */,
+				26BDC6773DFD4C5B25F77DBD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CD24AA91AF3F0373595FA90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-joe-tonder/Pods-joe-tonder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26BDC6773DFD4C5B25F77DBD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-joe-tonder/Pods-joe-tonder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDDF37A4413A481AB06C2B1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		15EB732C1FDE27C200FC595F /* Sources */ = {
@@ -272,6 +347,7 @@
 		};
 		15EB73431FDE27C200FC595F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6925ACD218E7139BFB10678 /* Pods-joe-tonder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +362,7 @@
 		};
 		15EB73441FDE27C200FC595F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE7D439D234112B42C97C803 /* Pods-joe-tonder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

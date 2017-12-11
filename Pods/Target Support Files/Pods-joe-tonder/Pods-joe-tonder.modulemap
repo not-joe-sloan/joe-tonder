@@ -1,0 +1,6 @@
+framework module Pods_joe_tonder {
+  umbrella header "Pods-joe-tonder-umbrella.h"
+
+  export *
+  module * { export * }
+}
