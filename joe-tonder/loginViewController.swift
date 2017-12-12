@@ -53,6 +53,8 @@ class loginViewController: UIViewController {
                         }
                     }else{
                         print("Signup Successful")
+                        self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                        
                     }
                 })
             }else{
@@ -67,12 +69,18 @@ class loginViewController: UIViewController {
                         if error != nil{
                             print(error?.localizedDescription)
                         }else{
-                            print("Login Successful")
+                            self.performSegue(withIdentifier: "loginSegue", sender: nil)
                         }
                     })
                 }
             }
             
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if PFUser.current() != nil {
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
     }
     
@@ -114,6 +122,7 @@ class loginViewController: UIViewController {
 
         emailTextField.alpha = 0
         emailTextField.isEnabled = false
+        
         // Do any additional setup after loading the view.
     }
 

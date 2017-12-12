@@ -78,6 +78,27 @@ class updateViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let isFemale = PFUser.current()!["isFemale"] as? Bool{
+            genderSwitch.setOn(isFemale, animated: false)
+        }
+        
+        if let isInterestedInWomen = PFUser.current()!["isInterestedInWomen"] as? Bool{
+            interestSwitch.setOn(isInterestedInWomen, animated: false)
+        }
+        
+        if let photo = PFUser.current()!["Photo"] as? PFFile {
+            photo.getDataInBackground(block: { (data, error) in
+                if error != nil {
+                    self.displayAlert(title: "Error", message: (error?.localizedDescription)!)
+                    
+                }else{
+                    if let image = UIImage(data: data!){
+                        self.profileImageView.image = image
+                    }
+                }
+            })
+        }
+        
         // Do any additional setup after loading the view.
     }
 
