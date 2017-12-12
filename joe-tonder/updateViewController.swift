@@ -14,6 +14,35 @@ class updateViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet var genderSwitch: UISwitch!
     @IBOutlet var interestSwitch: UISwitch!
     
+    func createWomen(){
+        let imageUrls = ["https://vignette.wikia.nocookie.net/simpsons/images/b/b0/Woman_resembling_Homer.png/revision/latest/scale-to-width-down/700?cb=20141026204206", "https://static.comicvine.com/uploads/scale_small/8/80778/2054878-judge_constance_harm.png", "https://vignette.wikia.nocookie.net/simpsons/images/d/df/Shauna_Chalmers_Tapped_out.png/revision/latest?cb=20150802232912", "https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png"]
+        var counter = 0
+        
+        
+        for imageURL in imageUrls{
+            let url = URL(string: imageURL)
+            if let data = try? Data(contentsOf: url!){
+                let imageFile = PFFile(name: "photo.png", data: data)
+                let user = PFUser()
+                user["photo"] = imageFile
+                user.username =  String(counter)
+                user.password = "Pass"
+                user["isFemale"] = true
+                user["isInterestedInWomen"] = false
+                
+                user.signUpInBackground(block: { (success, error) in
+                    if success {
+                        print("Woman user created")
+                    }
+                })
+                
+                counter += 1
+            }
+        }
+    }
+    
+    
+    
     @IBAction func updateImagePressed(_ sender: Any) {
         
         let imagePicker = UIImagePickerController()
@@ -77,6 +106,7 @@ class updateViewController: UIViewController, UINavigationControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         if let isFemale = PFUser.current()!["isFemale"] as? Bool{
             genderSwitch.setOn(isFemale, animated: false)
