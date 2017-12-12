@@ -19,6 +19,7 @@ class loginViewController: UIViewController {
     
     var signupMode = false
     
+    
     func displayAlert(title: String, message: String){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
@@ -55,15 +56,26 @@ class loginViewController: UIViewController {
                     }
                 })
             }else{
-                displayAlert(title: "Incomplete Form", message: "All fields are required")
+                self.displayAlert(title: "Incomplete Form", message: "All fields are required")
+            }
+        }else{
+            
+            if let username = nameTextField.text{
+                if let password = passTextField.text {
+                    PFUser.logInWithUsername(inBackground: username, password: password, block: { (user, error) in
+                        //self.displayAlert(title: "Error", message: (error?.localizedDescription)!)
+                        if error != nil{
+                            print(error?.localizedDescription)
+                        }else{
+                            print("Login Successful")
+                        }
+                    })
+                }
             }
             
-            
-            
-            
-        }else{
         }
     }
+    
     @IBAction func changeLoginSignUpTapped(_ sender: Any) {
         
         if signupMode{
