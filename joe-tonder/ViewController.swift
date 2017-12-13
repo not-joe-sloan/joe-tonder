@@ -24,11 +24,47 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "logOutFromCards", sender: nil)
     }
     
+    func updateImage() {
+        
+        if let query = PFUser.query(){
+            if let isInterestedInWomen = PFUser.current()?["isInterestedInWomen"]{
+                query.whereKey("isFemale", equalTo: isInterestedInWomen)
+            }
+            
+            if let isFemale = PFUser.current()?["isFemale"]{
+                query.whereKey("isInterestedInWomen", equalTo: isFemale)
+            }
+            
+            query.limit = 1
+            
+            query.findObjectsInBackground { (objects, error) in
+                if let users = objects {
+                    for object in users{
+                        if let user = object as? PFUser{
+                            if let imageFile = user["Photo"] as? PFFile{
+                                imageFile.getDataInBackground(block: { (data, error) in
+                                    if let image = data {
+                                        self.matchImageView.image = UIImage(data: image)
+                                    }
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(gestureRecognizer: )))
         matchImageView.addGestureRecognizer(gesture)
+        
+        updateImage()
         
         // Do any additional setup after loading the view, typically from a nib.
     }

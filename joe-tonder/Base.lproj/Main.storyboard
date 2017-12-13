@@ -303,8 +303,8 @@
                         <outlet property="genderSwitch" destination="fx6-Km-lQB" id="Y6d-ie-c3p"/>
                         <outlet property="interestSwitch" destination="4XD-db-b8I" id="x2K-Ko-7mc"/>
                         <outlet property="profileImageView" destination="EYx-o7-skf" id="gIz-BY-xjW"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showStackSegue" id="HGb-0n-bVY"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="4NI-oa-2t8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showStackSegue" id="HGb-0n-bVY"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToUpdateView" id="4NI-oa-2t8"/>
                         <segue destination="xNl-Df-uO7" kind="presentation" identifier="updateToLogout" id="aSt-qZ-TDx"/>
                     </connections>
                 </viewController>
@@ -318,7 +318,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Yiv-6I-UgH"/>
-        <segue reference="y7a-zs-a8n"/>
-        <segue reference="2BJ-PR-0pD"/>
+        <segue reference="aSt-qZ-TDx"/>
+        <segue reference="4NI-oa-2t8"/>
     </inferredMetricsTieBreakers>
 </document>
