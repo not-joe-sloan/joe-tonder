@@ -80,7 +80,15 @@ class loginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if PFUser.current() != nil {
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            if PFUser.current()!["isFemale"] != nil {
+                self.performSegue(withIdentifier: "loginToSwipeSegue", sender: nil)
+            }else{
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
+            
+            
+            
+            
         }
     }
     

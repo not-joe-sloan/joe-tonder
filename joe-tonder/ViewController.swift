@@ -14,6 +14,14 @@ class ViewController: UIViewController {
 
     @IBOutlet var swipeLabel: UILabel!
     
+    @IBAction func updateProfilePressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToUpdateView", sender: nil)
+    }
+    @IBAction func logoutPressed(_ sender: Any) {
+        PFUser.logOut()
+        performSegue(withIdentifier: "logOutFromCards", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
