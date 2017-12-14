@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     
     
     @IBAction func updateProfilePressed(_ sender: Any) {
-        performSegue(withIdentifier: "goToUpdateView", sender: nil)
     }
     @IBAction func logoutPressed(_ sender: Any) {
         PFUser.logOut()

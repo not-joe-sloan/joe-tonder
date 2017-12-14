@@ -28,9 +28,10 @@
                                                 <action selector="logoutPressed:" destination="BYZ-38-t0r" id="xM3-c9-UIF"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Update Profile" id="gM8-qe-nZC">
+                                        <barButtonItem key="rightBarButtonItem" title="Matches" id="gM8-qe-nZC">
                                             <connections>
                                                 <action selector="updateProfilePressed:" destination="BYZ-38-t0r" id="s5E-ca-6dd"/>
+                                                <segue destination="sCz-Ih-YAo" kind="presentation" id="z2e-xB-WXv"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -59,13 +60,121 @@
                     <connections>
                         <outlet property="matchImageView" destination="dId-9r-GJm" id="mBs-W8-XYX"/>
                         <segue destination="xNl-Df-uO7" kind="show" identifier="logOutSegue" id="5TC-hK-QXD"/>
-                        <segue destination="RSa-Hk-70p" kind="show" identifier="goToUpdateView" id="Yiv-6I-UgH"/>
                         <segue destination="xNl-Df-uO7" kind="presentation" identifier="logOutFromCards" id="y7a-zs-a8n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2477.5999999999999" y="447.52623688155927"/>
+        </scene>
+        <!--Matches View Controller-->
+        <scene sceneID="gI1-Sl-aVX">
+            <objects>
+                <viewController id="sCz-Ih-YAo" customClass="matchesViewController" customModule="joe_tonder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="me8-uc-5jk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDS-gO-5Jm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Matches" id="mgs-j3-wa5">
+                                        <barButtonItem key="rightBarButtonItem" title="Back" id="ikq-M5-CGF">
+                                            <connections>
+                                                <action selector="backTapped:" destination="sCz-Ih-YAo" id="MUZ-eC-Tse"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-af-jJ8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="matchCell" rowHeight="116" id="yA9-n4-Zdg" customClass="matchTableViewCell" customModule="joe_tonder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="116"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yA9-n4-Zdg" id="MqX-FE-Cay">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="115.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="FRu-OJ-wZM">
+                                                    <rect key="frame" x="10" y="10" width="95.5" height="95.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="FRu-OJ-wZM" secondAttribute="height" multiplier="1:1" id="Kbg-25-Vzm"/>
+                                                        <constraint firstAttribute="height" constant="95.5" id="Pej-2r-cf3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a ton of information and there's so much of it!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuZ-as-udd">
+                                                    <rect key="frame" x="121" y="10" width="244" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="f3F-yL-uoA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q8H-95-XZW">
+                                                    <rect key="frame" x="121" y="52" width="239" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-zr-IYn">
+                                                    <rect key="frame" x="324" y="84" width="36" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="cuY-On-QqH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="Send"/>
+                                                    <connections>
+                                                        <action selector="sendTapped:" destination="yA9-n4-Zdg" eventType="touchUpInside" id="iKz-5W-uYS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="FRu-OJ-wZM" secondAttribute="bottom" constant="10" id="ATR-CE-3gV"/>
+                                                <constraint firstItem="GuZ-as-udd" firstAttribute="leading" secondItem="FRu-OJ-wZM" secondAttribute="trailing" constant="15" id="FHl-kQ-dfd"/>
+                                                <constraint firstItem="q8H-95-XZW" firstAttribute="top" secondItem="GuZ-as-udd" secondAttribute="bottom" constant="8" id="JOh-Nx-my4"/>
+                                                <constraint firstItem="1LJ-zr-IYn" firstAttribute="trailing" secondItem="q8H-95-XZW" secondAttribute="trailing" id="Pov-d6-QLq"/>
+                                                <constraint firstAttribute="trailing" secondItem="GuZ-as-udd" secondAttribute="trailing" constant="10" id="RdG-6L-YS8"/>
+                                                <constraint firstItem="1LJ-zr-IYn" firstAttribute="top" secondItem="q8H-95-XZW" secondAttribute="bottom" constant="2" id="T8C-21-jeT"/>
+                                                <constraint firstItem="q8H-95-XZW" firstAttribute="leading" secondItem="FRu-OJ-wZM" secondAttribute="trailing" constant="15.5" id="ayr-jp-0RR"/>
+                                                <constraint firstItem="FRu-OJ-wZM" firstAttribute="leading" secondItem="MqX-FE-Cay" secondAttribute="leading" constant="10" id="jZq-I5-xBJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="q8H-95-XZW" secondAttribute="trailing" constant="15" id="kv5-BG-cLT"/>
+                                                <constraint firstAttribute="bottom" secondItem="FRu-OJ-wZM" secondAttribute="bottom" constant="10" id="q3u-SD-gGD"/>
+                                                <constraint firstItem="GuZ-as-udd" firstAttribute="top" secondItem="MqX-FE-Cay" secondAttribute="top" constant="10" id="qNk-W0-neh"/>
+                                                <constraint firstItem="FRu-OJ-wZM" firstAttribute="top" secondItem="MqX-FE-Cay" secondAttribute="top" constant="10" id="sDJ-96-0fW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="GuZ-as-udd" id="B0L-5r-lbo"/>
+                                            <outlet property="messageTextField" destination="q8H-95-XZW" id="JcX-In-vZm"/>
+                                            <outlet property="profileImageView" destination="FRu-OJ-wZM" id="N1A-Bx-7xo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zDS-gO-5Jm" firstAttribute="leading" secondItem="dks-o0-B9J" secondAttribute="leading" id="EoB-Ut-1QC"/>
+                            <constraint firstItem="zDS-gO-5Jm" firstAttribute="trailing" secondItem="dks-o0-B9J" secondAttribute="trailing" id="TZM-QF-uzS"/>
+                            <constraint firstItem="RAM-af-jJ8" firstAttribute="bottom" secondItem="dks-o0-B9J" secondAttribute="bottom" id="WRU-A1-A5f"/>
+                            <constraint firstItem="RAM-af-jJ8" firstAttribute="trailing" secondItem="dks-o0-B9J" secondAttribute="trailing" id="YUD-hk-5eG"/>
+                            <constraint firstItem="RAM-af-jJ8" firstAttribute="leading" secondItem="dks-o0-B9J" secondAttribute="leading" id="dUa-yY-w44"/>
+                            <constraint firstItem="zDS-gO-5Jm" firstAttribute="top" secondItem="dks-o0-B9J" secondAttribute="top" id="tud-FX-mmj"/>
+                            <constraint firstItem="RAM-af-jJ8" firstAttribute="top" secondItem="zDS-gO-5Jm" secondAttribute="bottom" id="wbZ-aA-Mye"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dks-o0-B9J"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="RAM-af-jJ8" id="Fyw-5a-kiJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUM-3C-8Xo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3480.8000000000002" y="447.52623688155927"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="w9X-3p-WoV">
@@ -317,7 +426,6 @@
         <image name="user.png" width="1010" height="1052"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yiv-6I-UgH"/>
         <segue reference="y7a-zs-a8n"/>
         <segue reference="4NI-oa-2t8"/>
     </inferredMetricsTieBreakers>
