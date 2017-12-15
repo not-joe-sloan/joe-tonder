@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class matchTableViewCell: UITableViewCell {
+    
+    var recipientObjectId = String()
     
     
     @IBOutlet var messageLabel: UILabel!
@@ -20,6 +23,16 @@ class matchTableViewCell: UITableViewCell {
         // Initialization code
     }
     @IBAction func sendTapped(_ sender: Any) {
+        if messageTextField.text != "" && messageTextField.text != nil{
+            let message = PFObject(className: "Message")
+            message["sender"] = PFUser.current()?.objectId
+            message["recipient"] = recipientObjectId
+            message["content"] = messageTextField.text
+            
+            message.saveInBackground()
+            messageLabel.text = messageTextField.text
+            messageTextField.text = ""
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
